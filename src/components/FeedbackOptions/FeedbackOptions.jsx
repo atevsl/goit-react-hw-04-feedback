@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ButtonStyled } from './FeedbackOptions.styled';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  return Object.keys(options).map(el => {
+  return options.map(el => {
     return (
       <ButtonStyled
         type="button"
@@ -20,6 +20,6 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 
 export default FeedbackOptions;
 FeedbackOptions.propTypes = {
-  options: PropTypes.object.isRequired,
+  options: PropTypes.array.isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
