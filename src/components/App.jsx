@@ -3,22 +3,24 @@ import Section from './Section/Section';
 import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Notification from './Notification';
+import { startTransition } from 'react';
 
 const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
   const feedbackItems = { good, neutral, bad };
+
   const onLeaveFeedback = el => {
     switch (el) {
       case 'good':
-        setGood(good => good + 1);
+        setGood(prevGood => prevGood + 1);
         break;
       case 'neutral':
-        setNeutral(neutral => neutral + 1);
+        setNeutral(prevNeutral => prevNeutral + 1);
         break;
       case 'bad':
-        setBad(bad => bad + 1);
+        setBad(prevBad => prevBad + 1);
         break;
       default:
         console.log('there is no such option');
