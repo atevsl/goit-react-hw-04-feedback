@@ -3,7 +3,6 @@ import Section from './Section/Section';
 import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Notification from './Notification';
-import { startTransition } from 'react';
 
 const App = () => {
   const [good, setGood] = useState(0);
